@@ -11,7 +11,7 @@ jobs:
   lint:
     name: lint
     runs-on: ubuntu-latest
-    if: github.repository == 'hdemirev/hari-public-repo'
+    
 
     steps:
       - uses: actions/checkout@v3

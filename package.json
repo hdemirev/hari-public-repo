@@ -1,6 +1,6 @@
 {
   "name": "hari-new-test-org-project-1",
-  "version": "0.0.1-alpha.0",
+  "version": "0.1.0-alpha.1",
   "description": "The official TypeScript library for the Hari New Test Org Project 1 API",
   "author": "Hari New Test Org Project 1 <dev-feedback@hari-new-test-org-project-1.com>",
   "types": "dist/index.d.ts",

@@ -139,13 +139,13 @@ describe('instantiate client', () => {
     test('empty env variable', () => {
       process.env['HARI_TEST_BASE_URL'] = ''; // empty
       const client = new HariTest({});
-      expect(client.baseURL).toEqual('http://petstore.swagger.io/v2');
+      expect(client.baseURL).toEqual('http://petstore.swagger.io/v1');
     });
 
     test('blank env variable', () => {
       process.env['HARI_TEST_BASE_URL'] = '  '; // blank
       const client = new HariTest({});
-      expect(client.baseURL).toEqual('http://petstore.swagger.io/v2');
+      expect(client.baseURL).toEqual('http://petstore.swagger.io/v1');
     });
   });
 

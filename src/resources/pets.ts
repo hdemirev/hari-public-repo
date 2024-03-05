@@ -23,12 +23,12 @@ export class Pets extends APIResource {
   /**
    * List all pets
    */
-  list(query?: PetListParams, options?: Core.RequestOptions): Core.APIPromise<PetListResponse>;
-  list(options?: Core.RequestOptions): Core.APIPromise<PetListResponse>;
+  list(query?: PetListParams, options?: Core.RequestOptions): Core.APIPromise<Pets>;
+  list(options?: Core.RequestOptions): Core.APIPromise<Pets>;
   list(
     query: PetListParams | Core.RequestOptions = {},
     options?: Core.RequestOptions,
-  ): Core.APIPromise<PetListResponse> {
+  ): Core.APIPromise<Pets> {
     if (isRequestOptions(query)) {
       return this.list({}, query);
     }
@@ -44,7 +44,7 @@ export interface Pet {
   tag?: string;
 }
 
-export type PetListResponse = Array<Pet>;
+export type Pets = Array<Pet>;
 
 export interface PetListParams {
   /**
@@ -55,6 +55,6 @@ export interface PetListParams {
 
 export namespace Pets {
   export import Pet = PetsAPI.Pet;
-  export import PetListResponse = PetsAPI.PetListResponse;
+  export import Pets = PetsAPI.Pets;
   export import PetListParams = PetsAPI.PetListParams;
 }

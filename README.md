@@ -9,6 +9,7 @@ The REST API documentation can be found [on docs.hari_test.com](https://docs.har
 ## Installation
 
 ```sh
+# install from NPM
 npm install --save hari_test
 # or
 yarn add hari_test
@@ -25,7 +26,7 @@ import HariTest from 'hari_test';
 const hariTest = new HariTest();
 
 async function main() {
-  const pet = await hariTest.pets.retrieve('123555rfffs');
+  const pet = await hariTest.pets.retrieve('REPLACE_ME');
 
   console.log(pet.id);
 }
@@ -44,7 +45,7 @@ import HariTest from 'hari_test';
 const hariTest = new HariTest();
 
 async function main() {
-  const pet: HariTest.Pet = await hariTest.pets.retrieve('123555rfffs');
+  const pet: HariTest.Pet = await hariTest.pets.retrieve('REPLACE_ME');
 }
 
 main();
@@ -61,7 +62,7 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 async function main() {
-  const pet = await hariTest.pets.retrieve('123555rfffs').catch((err) => {
+  const pet = await hariTest.pets.retrieve('REPLACE_ME').catch(async (err) => {
     if (err instanceof HariTest.APIError) {
       console.log(err.status); // 400
       console.log(err.name); // BadRequestError
@@ -104,7 +105,7 @@ const hariTest = new HariTest({
 });
 
 // Or, configure per-request:
-await hariTest.pets.retrieve('123555rfffs', {
+await hariTest.pets.retrieve('REPLACE_ME', {
   maxRetries: 5,
 });
 ```
@@ -121,7 +122,7 @@ const hariTest = new HariTest({
 });
 
 // Override per-request:
-await hariTest.pets.retrieve('123555rfffs', {
+await hariTest.pets.retrieve('REPLACE_ME', {
   timeout: 5 * 1000,
 });
 ```
@@ -142,11 +143,11 @@ You can also use the `.withResponse()` method to get the raw `Response` along wi
 ```ts
 const hariTest = new HariTest();
 
-const response = await hariTest.pets.retrieve('123555rfffs').asResponse();
+const response = await hariTest.pets.retrieve('REPLACE_ME').asResponse();
 console.log(response.headers.get('X-My-Header'));
 console.log(response.statusText); // access the underlying Response object
 
-const { data: pet, response: raw } = await hariTest.pets.retrieve('123555rfffs').withResponse();
+const { data: pet, response: raw } = await hariTest.pets.retrieve('REPLACE_ME').withResponse();
 console.log(raw.headers.get('X-My-Header'));
 console.log(pet.id);
 ```
@@ -167,7 +168,7 @@ import HariTest from 'hari_test';
 ```
 
 To do the inverse, add `import "hari_test/shims/node"` (which does import polyfills).
-This can also be useful if you are getting the wrong TypeScript types for `Response` - more details [here](https://github.com/hdemirev/hari-public-repo/tree/main/src/_shims#readme).
+This can also be useful if you are getting the wrong TypeScript types for `Response` ([more details](https://github.com/stainless-sdks/tree/main/src/_shims#readme)).
 
 You may also provide a custom `fetch` function when instantiating the client,
 which can be used to inspect or alter the `Request` or `Response` before/after each request:
@@ -177,7 +178,7 @@ import { fetch } from 'undici'; // as one example
 import HariTest from 'hari_test';
 
 const client = new HariTest({
-  fetch: async (url: RequestInfo, init?: RequestInfo): Promise<Response> => {
+  fetch: async (url: RequestInfo, init?: RequestInit): Promise<Response> => {
     console.log('About to make a request', url, init);
     const response = await fetch(url, init);
     console.log('Got response', response);
@@ -198,7 +199,7 @@ If you would like to disable or customize this behavior, for example to use the 
 <!-- prettier-ignore -->
 ```ts
 import http from 'http';
-import HttpsProxyAgent from 'https-proxy-agent';
+import { HttpsProxyAgent } from 'https-proxy-agent';
 
 // Configure the default for all requests:
 const hariTest = new HariTest({
@@ -206,10 +207,9 @@ const hariTest = new HariTest({
 });
 
 // Override per-request:
-await hariTest.pets.retrieve('123555rfffs', {
-  baseURL: 'http://localhost:8080/test-api',
+await hariTest.pets.retrieve('REPLACE_ME', {
   httpAgent: new http.Agent({ keepAlive: false }),
-})
+});
 ```
 
 ## Semantic Versioning
@@ -222,7 +222,7 @@ This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) con
 
 We take backwards-compatibility seriously and work hard to ensure you can rely on a smooth upgrade experience.
 
-We are keen for your feedback; please open an [issue](https://www.github.com/hdemirev/hari-public-repo/issues) with questions, bugs, or suggestions.
+We are keen for your feedback; please open an [issue](https://www.github.com/stainless-sdks/hari_test-node/issues) with questions, bugs, or suggestions.
 
 ## Requirements
 

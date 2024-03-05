@@ -62,7 +62,7 @@ a subclass of `APIError` will be thrown:
 <!-- prettier-ignore -->
 ```ts
 async function main() {
-  const pet = await hariNewTestOrgProject2.pets.retrieve('REPLACE_ME').catch((err) => {
+  const pet = await hariNewTestOrgProject2.pets.retrieve('REPLACE_ME').catch(async (err) => {
     if (err instanceof HariNewTestOrgProject2.APIError) {
       console.log(err.status); // 400
       console.log(err.name); // BadRequestError
@@ -168,7 +168,7 @@ import HariNewTestOrgProject2 from 'hari-new-test-org-project-2';
 ```
 
 To do the inverse, add `import "hari-new-test-org-project-2/shims/node"` (which does import polyfills).
-This can also be useful if you are getting the wrong TypeScript types for `Response` ([more details](https://github.com/stainless-sdks/tree/main/src/_shims#readme)).
+This can also be useful if you are getting the wrong TypeScript types for `Response` ([more details](https://github.com/hdemirev/hari-public-repo/tree/main/src/_shims#readme)).
 
 You may also provide a custom `fetch` function when instantiating the client,
 which can be used to inspect or alter the `Request` or `Response` before/after each request:
@@ -199,7 +199,7 @@ If you would like to disable or customize this behavior, for example to use the 
 <!-- prettier-ignore -->
 ```ts
 import http from 'http';
-import HttpsProxyAgent from 'https-proxy-agent';
+import { HttpsProxyAgent } from 'https-proxy-agent';
 
 // Configure the default for all requests:
 const hariNewTestOrgProject2 = new HariNewTestOrgProject2({
@@ -208,9 +208,8 @@ const hariNewTestOrgProject2 = new HariNewTestOrgProject2({
 
 // Override per-request:
 await hariNewTestOrgProject2.pets.retrieve('REPLACE_ME', {
-  baseURL: 'http://localhost:8080/test-api',
   httpAgent: new http.Agent({ keepAlive: false }),
-})
+});
 ```
 
 ## Semantic Versioning
@@ -223,7 +222,7 @@ This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) con
 
 We take backwards-compatibility seriously and work hard to ensure you can rely on a smooth upgrade experience.
 
-We are keen for your feedback; please open an [issue](https://www.github.com/stainless-sdks/hari-new-test-org-project-2-node/issues) with questions, bugs, or suggestions.
+We are keen for your feedback; please open an [issue](https://www.github.com/hdemirev/hari-public-repo/issues) with questions, bugs, or suggestions.
 
 ## Requirements
 

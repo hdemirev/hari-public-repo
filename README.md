@@ -9,10 +9,7 @@ The REST API documentation can be found [on docs.hari_test.com](https://docs.har
 ## Installation
 
 ```sh
-# install from NPM
-npm install --save hari_test
-# or
-yarn add hari_test
+npm install hari_test
 ```
 
 ## Usage
@@ -168,7 +165,7 @@ import HariTest from 'hari_test';
 ```
 
 To do the inverse, add `import "hari_test/shims/node"` (which does import polyfills).
-This can also be useful if you are getting the wrong TypeScript types for `Response` ([more details](https://github.com/stainless-sdks/tree/main/src/_shims#readme)).
+This can also be useful if you are getting the wrong TypeScript types for `Response` ([more details](https://github.com/hdemirev/hari-public-repo/tree/main/src/_shims#readme)).
 
 You may also provide a custom `fetch` function when instantiating the client,
 which can be used to inspect or alter the `Request` or `Response` before/after each request:
@@ -222,7 +219,7 @@ This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) con
 
 We take backwards-compatibility seriously and work hard to ensure you can rely on a smooth upgrade experience.
 
-We are keen for your feedback; please open an [issue](https://www.github.com/stainless-sdks/hari_test-node/issues) with questions, bugs, or suggestions.
+We are keen for your feedback; please open an [issue](https://www.github.com/hdemirev/hari-public-repo/issues) with questions, bugs, or suggestions.
 
 ## Requirements
 

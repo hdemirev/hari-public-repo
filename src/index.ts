@@ -71,7 +71,7 @@ export class HariTest extends Core.APIClient {
   /**
    * API Client for interfacing with the Hari Test API.
    *
-   * @param {string} [opts.baseURL=process.env['HARI_TEST_BASE_URL'] ?? http://petstore.swagger.io/v2] - Override the default base URL for the API.
+   * @param {string} [opts.baseURL=process.env['HARI_TEST_BASE_URL'] ?? http://petstore.swagger.io/v3] - Override the default base URL for the API.
    * @param {number} [opts.timeout=1 minute] - The maximum amount of time (in milliseconds) the client will wait for a response before timing out.
    * @param {number} [opts.httpAgent] - An HTTP agent used to manage HTTP(s) connections.
    * @param {Core.Fetch} [opts.fetch] - Specify a custom `fetch` function implementation.
@@ -82,7 +82,7 @@ export class HariTest extends Core.APIClient {
   constructor({ baseURL = Core.readEnv('HARI_TEST_BASE_URL'), ...opts }: ClientOptions = {}) {
     const options: ClientOptions = {
       ...opts,
-      baseURL: baseURL || `http://petstore.swagger.io/v2`,
+      baseURL: baseURL || `http://petstore.swagger.io/v3`,
     };
 
     super({

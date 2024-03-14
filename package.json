@@ -1,6 +1,6 @@
 {
   "name": "hari_test",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "The official TypeScript library for the Hari Test API",
   "author": "Hari Test <dev-feedback@hari_test.com>",
   "types": "dist/index.d.ts",

@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.0 (2024-03-19)
+
+Full Changelog: [v0.4.0...v1.0.0](https://github.com/hdemirev/hari-public-repo/compare/v0.4.0...v1.0.0)
+
+### Features
+
+* **api:** update via SDK Studio ([#22](https://github.com/hdemirev/hari-public-repo/issues/22)) ([091bb99](https://github.com/hdemirev/hari-public-repo/commit/091bb992ede3a9086c007e6fd4d1af855db042c9))
+
 ## 0.4.0 (2024-03-14)
 
 Full Changelog: [v0.3.0...v0.4.0](https://github.com/hdemirev/hari-public-repo/compare/v0.3.0...v0.4.0)

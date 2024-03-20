@@ -1,0 +1,21 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["deno"],
+  "exclude": [],
+  "compilerOptions": {
+    "rootDir": "./deno",
+    "lib": ["es2020", "DOM"],
+    "paths": {
+      "hari_blabla/_shims/auto/*": ["deno/_shims/auto/*-deno"],
+      "hari_blabla/*": ["deno/*"],
+      "hari_blabla": ["deno/index.ts"],
+      "digest-fetch": ["./typings/digest-fetch"]
+    },
+    "noEmit": true,
+    "declaration": true,
+    "declarationMap": true,
+    "outDir": "deno",
+    "pretty": true,
+    "sourceMap": true
+  }
+}

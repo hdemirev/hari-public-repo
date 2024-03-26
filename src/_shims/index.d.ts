@@ -2,7 +2,7 @@
  * Disclaimer: modules in _shims aren't intended to be imported by SDK users.
  */
 import { manual } from './manual-types';
-import * as auto from 'my_test_hari/_shims/auto/types';
+import * as auto from 'hello/_shims/auto/types';
 import { type RequestOptions } from '../core';
 
 type SelectType<Manual, Auto> = unknown extends Manual ? Auto : Manual;

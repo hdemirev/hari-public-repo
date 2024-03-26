@@ -1,6 +1,6 @@
-import { multipartFormRequestOptions, createForm } from 'my_test_hari/core';
-import { Blob } from 'my_test_hari/_shims/index';
-import { toFile } from 'my_test_hari';
+import { multipartFormRequestOptions, createForm } from 'hello/core';
+import { Blob } from 'hello/_shims/index';
+import { toFile } from 'hello';
 
 describe('form data validation', () => {
   test('valid values do not error', async () => {

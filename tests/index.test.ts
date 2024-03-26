@@ -1,8 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import HariTest from 'my_test_hari';
-import { APIUserAbortError } from 'my_test_hari';
-import { Headers } from 'my_test_hari/core';
+import HariTest from 'hello';
+import { APIUserAbortError } from 'hello';
+import { Headers } from 'hello/core';
 import defaultFetch, { Response, type RequestInit, type RequestInfo } from 'node-fetch';
 
 describe('instantiate client', () => {

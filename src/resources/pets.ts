@@ -1,9 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import * as Core from 'my_test_hari/core';
-import { APIResource } from 'my_test_hari/resource';
-import { isRequestOptions } from 'my_test_hari/core';
-import * as PetsAPI from 'my_test_hari/resources/pets';
+import * as Core from 'hello/core';
+import { APIResource } from 'hello/resource';
+import { isRequestOptions } from 'hello/core';
+import * as PetsAPI from 'hello/resources/pets';
 
 export class Pets extends APIResource {
   /**

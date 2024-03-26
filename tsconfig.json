@@ -9,9 +9,9 @@
     "esModuleInterop": true,
     "baseUrl": "./",
     "paths": {
-      "my_test_hari/_shims/auto/*": ["src/_shims/auto/*-node"],
-      "my_test_hari/*": ["src/*"],
-      "my_test_hari": ["src/index.ts"],
+      "hello/_shims/auto/*": ["src/_shims/auto/*-node"],
+      "hello/*": ["src/*"],
+      "hello": ["src/index.ts"],
       "digest-fetch": ["./typings/digest-fetch"]
     },
     "noEmit": true,

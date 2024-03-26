@@ -1,6 +1,6 @@
 # Hari Test Node API Library
 
-[![NPM version](https://img.shields.io/npm/v/my_test_hari.svg)](https://npmjs.org/package/my_test_hari)
+[![NPM version](https://img.shields.io/npm/v/hello.svg)](https://npmjs.org/package/hello)
 
 This library provides convenient access to the Hari Test REST API from server-side TypeScript or JavaScript.
 
@@ -11,7 +11,7 @@ It is generated with [Stainless](https://www.stainlessapi.com/).
 ## Installation
 
 ```sh
-npm install my_test_hari
+npm install hello
 ```
 
 ## Usage
@@ -20,7 +20,7 @@ The full API of this library can be found in [api.md](api.md).
 
 <!-- prettier-ignore -->
 ```js
-import HariTest from 'my_test_hari';
+import HariTest from 'hello';
 
 const hariTest = new HariTest();
 
@@ -39,7 +39,7 @@ This library includes TypeScript definitions for all request params and response
 
 <!-- prettier-ignore -->
 ```ts
-import HariTest from 'my_test_hari';
+import HariTest from 'hello';
 
 const hariTest = new HariTest();
 
@@ -206,12 +206,12 @@ add the following import before your first import `from "HariTest"`:
 ```ts
 // Tell TypeScript and the package to use the global web fetch instead of node-fetch.
 // Note, despite the name, this does not add any polyfills, but expects them to be provided if needed.
-import 'my_test_hari/shims/web';
-import HariTest from 'my_test_hari';
+import 'hello/shims/web';
+import HariTest from 'hello';
 ```
 
-To do the inverse, add `import "my_test_hari/shims/node"` (which does import polyfills).
-This can also be useful if you are getting the wrong TypeScript types for `Response` ([more details](https://github.com/hdemirev/hari-test-go-module/tree/stainless/src/_shims#readme)).
+To do the inverse, add `import "hello/shims/node"` (which does import polyfills).
+This can also be useful if you are getting the wrong TypeScript types for `Response` ([more details](https://github.com/hdemirev/hari-public-repo/tree/stainless/src/_shims#readme)).
 
 ### Logging and middleware
 
@@ -220,7 +220,7 @@ which can be used to inspect or alter the `Request` or `Response` before/after e
 
 ```ts
 import { fetch } from 'undici'; // as one example
-import HariTest from 'my_test_hari';
+import HariTest from 'hello';
 
 const client = new HariTest({
   fetch: async (url: RequestInfo, init?: RequestInit): Promise<Response> => {
@@ -267,7 +267,7 @@ This package generally follows [SemVer](https://semver.org/spec/v2.0.0.html) con
 
 We take backwards-compatibility seriously and work hard to ensure you can rely on a smooth upgrade experience.
 
-We are keen for your feedback; please open an [issue](https://www.github.com/hdemirev/hari-test-go-module/issues) with questions, bugs, or suggestions.
+We are keen for your feedback; please open an [issue](https://www.github.com/hdemirev/hari-public-repo/issues) with questions, bugs, or suggestions.
 
 ## Requirements
 
@@ -276,7 +276,7 @@ TypeScript >= 4.5 is supported.
 The following runtimes are supported:
 
 - Node.js 18 LTS or later ([non-EOL](https://endoflife.date/nodejs)) versions.
-- Deno v1.28.0 or higher, using `import HariTest from "npm:my_test_hari"`.
+- Deno v1.28.0 or higher, using `import HariTest from "npm:hello"`.
 - Bun 1.0 or later.
 - Cloudflare Workers.
 - Vercel Edge Runtime.

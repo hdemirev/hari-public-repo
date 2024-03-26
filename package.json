@@ -1,12 +1,12 @@
 {
-  "name": "my_test_hari",
+  "name": "hello",
   "version": "0.1.0-alpha.1",
   "description": "The official TypeScript library for the Hari Test API",
   "author": "Hari Test <dev-feedback@hari_test.com>",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "type": "commonjs",
-  "repository": "github:hdemirev/hari-test-go-module",
+  "repository": "github:hdemirev/hari-public-repo",
   "license": "Apache-2.0",
   "packageManager": "yarn@1.22.21",
   "files": [
@@ -60,8 +60,8 @@
     "./shims/web.mjs"
   ],
   "imports": {
-    "my_test_hari": ".",
-    "my_test_hari/*": "./src/*"
+    "hello": ".",
+    "hello/*": "./src/*"
   },
   "exports": {
     "./_shims/auto/*": {

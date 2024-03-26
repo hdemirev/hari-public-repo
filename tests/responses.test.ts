@@ -1,5 +1,5 @@
-import { createResponseHeaders } from 'hari_blabla/core';
-import { Headers } from 'hari_blabla/_shims/index';
+import { createResponseHeaders } from 'my_test_hari/core';
+import { Headers } from 'my_test_hari/_shims/index';
 
 describe('response parsing', () => {
   // TODO: test unicode characters

@@ -4,8 +4,8 @@
 /**
  * Types will get added to this namespace when you import one of the following:
  *
- *   import 'hari_blabla/shims/node'
- *   import 'hari_blabla/shims/web'
+ *   import 'my_test_hari/shims/node'
+ *   import 'my_test_hari/shims/web'
  *
  * Importing more than one will cause type and runtime errors.
  */

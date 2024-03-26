@@ -1,4 +1,4 @@
-import { APIClient } from 'hari_blabla/core';
+import { APIClient } from 'my_test_hari/core';
 
 const { stringifyQuery } = APIClient.prototype as any;
 

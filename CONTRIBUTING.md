@@ -42,25 +42,25 @@ If you’d like to use the repository from source, you can either install from g
 To install via git:
 
 ```bash
-npm install git+ssh://git@github.com:hdemirev/hari_blabla-node.git
+npm install git+ssh://git@github.com:hdemirev/hari-test-go-module.git
 ```
 
 Alternatively, to link a local copy of the repo:
 
 ```bash
 # Clone
-git clone https://www.github.com/hdemirev/hari_blabla-node
-cd hari_blabla-node
+git clone https://www.github.com/hdemirev/hari-test-go-module
+cd hari-test-go-module
 
 # With yarn
 yarn link
 cd ../my-package
-yarn link hari_blabla
+yarn link my_test_hari
 
 # With pnpm
 pnpm link --global
 cd ../my-package
-pnpm link -—global hari_blabla
+pnpm link -—global my_test_hari
 ```
 
 ## Running tests
@@ -99,7 +99,7 @@ the changes aren't made through the automated pipeline, you may want to make rel
 
 ### Publish with a GitHub workflow
 
-You can release to package managers by using [the `Publish NPM` GitHub action](https://www.github.com/hdemirev/hari_blabla-node/actions/workflows/publish-npm.yml). This requires a setup organization or repository secret to be set up.
+You can release to package managers by using [the `Publish NPM` GitHub action](https://www.github.com/hdemirev/hari-test-go-module/actions/workflows/publish-npm.yml). This requires a setup organization or repository secret to be set up.
 
 ### Publish manually
 

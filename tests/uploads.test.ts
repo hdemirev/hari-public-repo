@@ -1,6 +1,6 @@
 import fs from 'fs';
-import { toFile, type ResponseLike } from 'hari_blabla/uploads';
-import { File } from 'hari_blabla/_shims/index';
+import { toFile, type ResponseLike } from 'my_test_hari/uploads';
+import { File } from 'my_test_hari/_shims/index';
 
 class MyClass {
   name: string = 'foo';

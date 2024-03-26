@@ -6,9 +6,9 @@
     "rootDir": "./deno",
     "lib": ["es2020", "DOM"],
     "paths": {
-      "hari_blabla/_shims/auto/*": ["deno/_shims/auto/*-deno"],
-      "hari_blabla/*": ["deno/*"],
-      "hari_blabla": ["deno/index.ts"],
+      "my_test_hari/_shims/auto/*": ["deno/_shims/auto/*-deno"],
+      "my_test_hari/*": ["deno/*"],
+      "my_test_hari": ["deno/index.ts"],
       "digest-fetch": ["./typings/digest-fetch"]
     },
     "noEmit": true,

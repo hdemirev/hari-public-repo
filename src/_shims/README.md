@@ -1,9 +1,9 @@
 # 👋 Wondering what everything in here does?
 
-`hari_blabla` supports a wide variety of runtime environments like Node.js, Deno, Bun, browsers, and various
+`my_test_hari` supports a wide variety of runtime environments like Node.js, Deno, Bun, browsers, and various
 edge runtimes, as well as both CommonJS (CJS) and EcmaScript Modules (ESM).
 
-To do this, `hari_blabla` provides shims for either using `node-fetch` when in Node (because `fetch` is still experimental there) or the global `fetch` API built into the environment when not in Node.
+To do this, `my_test_hari` provides shims for either using `node-fetch` when in Node (because `fetch` is still experimental there) or the global `fetch` API built into the environment when not in Node.
 
 It uses [conditional exports](https://nodejs.org/api/packages.html#conditional-exports) to
 automatically select the correct shims for each environment. However, conditional exports are a fairly new
@@ -15,32 +15,32 @@ getting the wrong raw `Response` type from `.asResponse()`, for example.
 
 The user can work around these issues by manually importing one of:
 
-- `import 'hari_blabla/shims/node'`
-- `import 'hari_blabla/shims/web'`
+- `import 'my_test_hari/shims/node'`
+- `import 'my_test_hari/shims/web'`
 
 All of the code here in `_shims` handles selecting the automatic default shims or manual overrides.
 
 ### How it works - Runtime
 
-Runtime shims get installed by calling `setShims` exported by `hari_blabla/_shims/registry`.
+Runtime shims get installed by calling `setShims` exported by `my_test_hari/_shims/registry`.
 
-Manually importing `hari_blabla/shims/node` or `hari_blabla/shims/web`, calls `setShims` with the respective runtime shims.
+Manually importing `my_test_hari/shims/node` or `my_test_hari/shims/web`, calls `setShims` with the respective runtime shims.
 
-All client code imports shims from `hari_blabla/_shims/index`, which:
+All client code imports shims from `my_test_hari/_shims/index`, which:
 
 - checks if shims have been set manually
-- if not, calls `setShims` with the shims from `hari_blabla/_shims/auto/runtime`
-- re-exports the installed shims from `hari_blabla/_shims/registry`.
+- if not, calls `setShims` with the shims from `my_test_hari/_shims/auto/runtime`
+- re-exports the installed shims from `my_test_hari/_shims/registry`.
 
-`hari_blabla/_shims/auto/runtime` exports web runtime shims.
-If the `node` export condition is set, the export map replaces it with `hari_blabla/_shims/auto/runtime-node`.
+`my_test_hari/_shims/auto/runtime` exports web runtime shims.
+If the `node` export condition is set, the export map replaces it with `my_test_hari/_shims/auto/runtime-node`.
 
 ### How it works - Type time
 
-All client code imports shim types from `hari_blabla/_shims/index`, which selects the manual types from `hari_blabla/_shims/manual-types` if they have been declared, otherwise it exports the auto types from `hari_blabla/_shims/auto/types`.
+All client code imports shim types from `my_test_hari/_shims/index`, which selects the manual types from `my_test_hari/_shims/manual-types` if they have been declared, otherwise it exports the auto types from `my_test_hari/_shims/auto/types`.
 
-`hari_blabla/_shims/manual-types` exports an empty namespace.
-Manually importing `hari_blabla/shims/node` or `hari_blabla/shims/web` merges declarations into this empty namespace, so they get picked up by `hari_blabla/_shims/index`.
+`my_test_hari/_shims/manual-types` exports an empty namespace.
+Manually importing `my_test_hari/shims/node` or `my_test_hari/shims/web` merges declarations into this empty namespace, so they get picked up by `my_test_hari/_shims/index`.
 
-`hari_blabla/_shims/auto/types` exports web type definitions.
-If the `node` export condition is set, the export map replaces it with `hari_blabla/_shims/auto/types-node`, though TS only picks this up if `"moduleResolution": "nodenext"` or `"moduleResolution": "bundler"`.
+`my_test_hari/_shims/auto/types` exports web type definitions.
+If the `node` export condition is set, the export map replaces it with `my_test_hari/_shims/auto/types-node`, though TS only picks this up if `"moduleResolution": "nodenext"` or `"moduleResolution": "bundler"`.

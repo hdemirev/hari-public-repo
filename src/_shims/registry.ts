@@ -42,12 +42,12 @@ export let isFsReadStream: Shims['isFsReadStream'] | undefined = undefined;
 export function setShims(shims: Shims, options: { auto: boolean } = { auto: false }) {
   if (auto) {
     throw new Error(
-      `you must \`import 'hari_blabla/shims/${shims.kind}'\` before importing anything else from hari_blabla`,
+      `you must \`import 'my_test_hari/shims/${shims.kind}'\` before importing anything else from my_test_hari`,
     );
   }
   if (kind) {
     throw new Error(
-      `can't \`import 'hari_blabla/shims/${shims.kind}'\` after \`import 'hari_blabla/shims/${kind}'\``,
+      `can't \`import 'my_test_hari/shims/${shims.kind}'\` after \`import 'my_test_hari/shims/${kind}'\``,
     );
   }
   auto = options.auto;

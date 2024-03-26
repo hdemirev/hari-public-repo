@@ -5,8 +5,8 @@
   "compilerOptions": {
     "rootDir": "./dist/src",
     "paths": {
-      "hari_blabla/*": ["dist/src/*"],
-      "hari_blabla": ["dist/src/index.ts"],
+      "my_test_hari/*": ["dist/src/*"],
+      "my_test_hari": ["dist/src/index.ts"],
       "digest-fetch": ["./typings/digest-fetch"]
     },
     "noEmit": false,
